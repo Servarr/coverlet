@@ -48,7 +48,8 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
     <WriteLinesToFile File="$(_sourceRootMappingFilePath)" Lines="@(_mapping)"
                       Overwrite="true" Encoding="Unicode"
                       Condition="'@(_mapping)'!=''"
-                      WriteOnlyWhenDifferent="true" />
+                      WriteOnlyWhenDifferent="true"
+                      ContinueOnError="WarnAndContinue" />
     <ItemGroup>
       <FileWrites Include="$(_sourceRootMappingFilePath)" Condition="'@(_mapping)'!=''" />
     </ItemGroup>
